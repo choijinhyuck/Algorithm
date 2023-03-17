@@ -1,5 +1,5 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/12985
-# 예상 대진표, Lv 1
+# 예상 대진표, Lv 2
 
 def solution(n,a,b):
     count = 0

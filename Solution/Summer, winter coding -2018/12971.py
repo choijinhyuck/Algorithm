@@ -1,6 +1,7 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/12971
 # 스티커 모으기 (2), Lv 3
 
+
 def solution(sticker):
     l = len(sticker)
     if l == 1 or l == 2 or l == 3:
@@ -9,12 +10,16 @@ def solution(sticker):
     dp_0 = [0] * l
     dp_1 = [0] * l
     dp_0[0], dp_0[2] = sticker[0], sticker[0] + sticker[2]
-    dp_1[1], dp_1[2] = sticker[1], sticker[2],
+    dp_1[1], dp_1[2] = (
+        sticker[1],
+        sticker[2],
+    )
     for idx, s in enumerate(sticker[3:l], 3):
         dp_0[idx] = s + max(dp_0[idx - 3], dp_0[idx - 2])
         dp_1[idx] = s + max(dp_1[idx - 3], dp_1[idx - 2])
 
-    return max(dp_0[0:l - 1] + dp_1[0:])
+    return max(dp_0[0 : l - 1] + dp_1[0:])
+
 
 # 다양한 경우의 수가 있어서 뭔가 복잡하다고 생각이 들면 바로 동적계획법 DP를 쓰는 게 대체로 맞다.
 # 첫 번째 스티커를 선택하는 경우를 잘 생각한다.

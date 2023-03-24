@@ -1,9 +1,11 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/12980
 # 점프와 순간 이동, Lv 2
 
+
 def solution(n):
     return list(map(str, bin(n))).count("1")
-  
+
+
 # 이진법을 활용하면 간단히 해결할 수 있다.
 # 목표값을 이진법으로 변환하고 1의 개수를 세면 된다.
 # 이진수에서 2배를 하면 0이 오른쪽에 하나 삽입되면서 왼쪽으로 숫자가 밀리는 방식으로 증가한다.
